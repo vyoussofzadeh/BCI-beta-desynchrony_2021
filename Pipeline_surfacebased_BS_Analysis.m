@@ -2,16 +2,6 @@
 clear; clc, close('all'); warning off
 
 %% Initial settings
-set(0,'DefaultFigureWindowStyle','docked');
-% set(0,'DefaultFigureWindowStyle' , 'normal')
-% set(gcf,'units','points','position',[500,500,500,500]);
-
-cd '/data/MEG/Vahab/Github/MCW-MEGlab/FT';
-restoredefaultpath
-cd_org = cd;
-addpath(genpath(cd_org));
-rmpath('./Failedattemps');
-
 %- Input dir
 % indir = '/mnt/file1/binder/binder_data/spendl';
 indir = '/mnt/file1/binder/binder_data/spendl/Clozedata';
@@ -22,7 +12,7 @@ outdir = '/data/MEG/Projects/spendl/ft_process';
 
 %- Adding path
 cfg_init = [];
-cfg_init.path_tools = '/data/MEG/Vahab/Github/MCW-MEGlab/tools';
+cfg_init.path_tools = './tools';
 % [allpath, atlas] = vy_init(cfg_init);
 
 %%
@@ -345,7 +335,7 @@ for ii=1:length(dd3)
     sFiles_name{ii} = [subj{ii},'_',dconn{ii}];
 end
 
-[idx,b] = unique(sFiles_name);
+[~,b] = unique(sFiles_name);
 sFiles_name2 = [];
 for m=1:length(b)
     sFiles_name2{m} = sFiles_name{b(m)};
@@ -365,7 +355,6 @@ disp('2: not overwrite intra-avg across clozes')
 ow = input(':');
 
 subj_all1 = unique(subj_all);
-
 if ow == 1
     clc
     close all,
@@ -412,7 +401,6 @@ for ii=1:length(dd3)
     dconn{ii} = tkz{3};
     sFiles_name_inter{ii} = [subj{ii},'_',dconn{ii}];
 end
-
 
 clc
 close all,
