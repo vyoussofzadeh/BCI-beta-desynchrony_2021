@@ -3,9 +3,7 @@ clear; clc, close('all'); warning off
 
 %% Initial settings
 %- Input dir
-% indir = '/mnt/file1/binder/binder_data/spendl';
-indir = '/mnt/file1/binder/binder_data/spendl/Clozedata';
-indir_second = '/data/MEG/Projects/spendl/Raw data';
+bsdir = '/data/MEG/Research/BCI';
 
 %- Output dir
 outdir = '/data/MEG/Projects/spendl/ft_process';
@@ -16,7 +14,6 @@ cfg_init.path_tools = './tools';
 % [allpath, atlas] = vy_init(cfg_init);
 
 %%
-bsdir = '/data/MEG/Research/BCI';
 cd(bsdir)
 
 %%
