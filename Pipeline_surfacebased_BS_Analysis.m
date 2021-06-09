@@ -7,7 +7,7 @@ bsdir = '/data/MEG/Research/BCI';
 
 %- Adding path
 cfg_init = [];
-cfg_init.path_tools = './tools'; % this folder should contains FT toolbox.
+cfg_init.path_tools = './tools'; % this folder should contain the FT toolbox.
 
 %%
 cd(bsdir)
