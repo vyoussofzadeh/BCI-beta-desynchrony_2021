@@ -2,16 +2,12 @@
 clear; clc, close('all'); warning off
 
 %% Initial settings
-%- Input dir
+%- Brainstorm dir
 bsdir = '/data/MEG/Research/BCI';
-
-%- Output dir
-outdir = '/data/MEG/Projects/spendl/ft_process';
 
 %- Adding path
 cfg_init = [];
-cfg_init.path_tools = './tools';
-% [allpath, atlas] = vy_init(cfg_init);
+cfg_init.path_tools = './tools'; % this folder should contains FT toolbox.
 
 %%
 cd(bsdir)
