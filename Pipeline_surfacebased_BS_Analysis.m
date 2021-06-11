@@ -22,7 +22,7 @@ dc = input('Select data condition:');
 %% Time-Freq Res (TFR) analysis
 switch dc
     case 1
-        stag = '4'; % hand
+        stag = '4'; % Hand
     case 2
         stag = '8'; % Feet
     case 3
