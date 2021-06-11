@@ -1,5 +1,5 @@
-%% Sentence recognition task
-clear; clc, close('all'); warning off
+%% BCI task
+% clear; clc, close('all'); warning off
 
 %% Initial settings
 %- Brainstorm dir
