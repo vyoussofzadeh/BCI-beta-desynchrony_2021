@@ -9,11 +9,19 @@ clear; clc, close('all'); warning off
 %% Initial settings
 %- Brainstorm dir
 bsdir = '/data/MEG/Research/BCI_Ulster/BCI5';
-
+bs_path = '/opt/matlab_toolboxes/brainstorm3';
 addpath ./functions
+ft_path = '/opt/matlab_toolboxes/fieldtrip';
 
 
-ft_path = '/data/MEG/Vahab/Github/fieldtrip';
+%% Open BS (and select BCI database)
+addpath(bs_path);
+brainstorm
+disp('slected BCI-DB from BS, then press enter');
+pause,
+% db_reload_database('current',1)
+
+%% Adding FT
 addpath(ft_path);
 ft_defaults
 
@@ -39,16 +47,7 @@ switch dc
         stag = '32'; % Word
 end
 
-
-%% Open BS (and select BCI database)
-bs_path = '/opt/matlab_toolboxes/brainstorm3';
-addpath(bs_path);
-brainstorm
-disp('slected BCI-DB from BS, then press enter');
-pause,
-db_reload_database('current',1)
-
-%%
+%% listing data files
 clear ProtocolSubjects
 protocol = fullfile(bsdir,'data','protocol.mat');
 load(protocol);
@@ -56,7 +55,6 @@ load(protocol);
 Subj = ProtocolSubjects.Subject;
 L = length(Subj);
 
-%% listing data files
 d = rdir(fullfile(bsdir,'data','S*','**', 'channel_vectorview306_acc1.mat'));
 
 % % ----
