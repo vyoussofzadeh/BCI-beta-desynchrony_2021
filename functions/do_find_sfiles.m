@@ -1,5 +1,4 @@
-%%
-function sFiles1 = vy_find_sfiles2(sFiles_name,dd3, tag)
+function sFiles1 = do_find_sfiles(sFiles_name,dd3, tag)
 
 clear idx idx1
 for i=1:size(tag,1)

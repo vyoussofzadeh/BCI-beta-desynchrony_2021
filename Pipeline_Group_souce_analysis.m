@@ -192,6 +192,8 @@ bst_process('CallProcess', 'process_average', sFiles_32(2:2:28), [], ...
     'Comment',       'avg_32_run2', ...
     'scalenormalized', 0);
 
+%%
+Run_BSparcellation_BCI
 
 %%
 Run_BSstats_BCI
