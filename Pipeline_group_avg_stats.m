@@ -1,6 +1,6 @@
 %% BCI dataset, Ulster University
 
-% preprocessing pipeline
+% Pipeline_group_avg_stat pipeline
 % Writtern by Vahab Youssof Zadeh
 % Update: 02/23/2022
 
