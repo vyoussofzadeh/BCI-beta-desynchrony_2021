@@ -13,7 +13,6 @@ bs_path = '/opt/matlab_toolboxes/brainstorm3';
 addpath ./functions
 ft_path = '/opt/matlab_toolboxes/fieldtrip';
 
-
 %% Open BS (and select BCI database)
 addpath(bs_path);
 brainstorm
