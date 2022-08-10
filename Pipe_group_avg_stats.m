@@ -54,7 +54,6 @@ BS_chan.subj_all = subj_all;
 BS_chan.datafile = datafl;
 BS_chan.datafolder = datafdr;
 
-
 %%
 cd(bsdir);
 dd = rdir(fullfile (bsdir,'data','Sub*/**/results*.mat'));
@@ -63,22 +62,25 @@ subj = unique(BS_chan.subj_all);
 
 clear sFiles_name
 subj = []; dconn = [];
+kk=1;
 for ii=1:length(dd)
     [a, ~] = fileparts(dd(ii).name);
     cd(a)
     tmp = load(dd(ii).name);
-    comm_data = tmp.Comment;
-    cd(dd(ii).folder)
-    tkz = tokenize(dd(ii).name,'/');
-    tkz1 = tokenize(tmp.DataFile,'/'); subj{ii} = tkz1{1};
-    tkz2 = tokenize(tkz1{2},'_'); run{ii} = tkz2{3};
-    tkz3 = tokenize(tkz1{end},'_'); dconn{ii} = tkz3{2};
-    sFiles_name{ii} = [subj{ii},'_',run{ii}, '_', dconn{ii}];
+    if ~contains(dd(ii).name, '@intra')
+        comm_data = tmp.Comment;
+        cd(dd(kk).folder)
+        tkz = tokenize(dd(kk).name,'/');
+        tkz1 = tokenize(tmp.DataFile,'/'); subj{kk} = tkz1{1};
+        tkz2 = tokenize(tkz1{2},'_'); run{kk} = tkz2{3};
+        tkz3 = tokenize(tkz1{end},'_'); dconn{kk} = tkz3{2};
+        sFiles_name{kk} = [subj{kk},'_',run{kk}, '_', dconn{kk}];
+        kk=kk+1;
+    end
 end
+disp(sFiles_name')
 
 %% Inter-subject (group) averaging
-addpath('/data/MEG/Vahab/Github/MCW-MEGlab/Projects/BCI/SR_BCI_matlabscripts')
-
 tag = ['_4';'_5'];
 sFiles_4 = do_find_sfiles(sFiles_name,dd, tag);
 % Process: Average: Everything
