@@ -3,4 +3,5 @@ This repository contains a Matlab Brainstorm (BS)-FieldTrip (ft) batch script to
 
 Processed data is available to download at: https://figshare.com/articles/software/BCI-beta-desynchrony_2021/20469144
 
+# Pubs
 bioRxiv: https://www.biorxiv.org/content/10.1101/2022.07.16.500303v1
