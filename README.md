@@ -3,6 +3,7 @@ This repository contains a Matlab Brainstorm (BS)-FieldTrip (ft) batch script to
 
 # Dataset
 Processed data is available to download at: https://figshare.com/articles/software/BCI-beta-desynchrony_2021/20469144
+
 Oringal data is available at, https://springernature.figshare.com/collections/A_magnetoencephalography_dataset_for_motor_and_cognitive_imagery_BCI/5101544
 
 # Pubs
