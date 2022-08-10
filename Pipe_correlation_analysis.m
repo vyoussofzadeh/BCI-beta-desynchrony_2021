@@ -14,14 +14,16 @@ addpath ./functions
 addpath ./data
 ft_path = '/opt/matlab_toolboxes/fieldtrip';
 indir = '/data/MEG/Research/BCI_Ulster/SPM_PRT3/nii';
+atlasdir = '/data/MEG/Vahab/Github/MCW_MEGlab/Projects/BCI/Data/atlas';
+maskdir = '/data/MEG/Vahab/Github/MCW_MEGlab/Projects/BCI/Data/mask';
 
 %% Adding FT
 addpath(ft_path);
 ft_defaults
 
 %% choose atlas
-load('DK_bs.mat')
-dkatlas = ft_read_atlas('DK.nii');
+load(fullfile(atlasdir,'DK_bs.mat'))
+dkatlas = ft_read_atlas(fullfile(atlasdir,'DK.nii'));
 dkatlas.parcellationlabel = atlas_DK1.dk_labels;
 
 cd(indir);
@@ -102,16 +104,16 @@ idx = mean(val,1) == 0; val1 = val; val1(:,idx) = [];
 %% Masks
 Mask = [];
 
-tmp = ft_read_mri('HAND.nii'); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
+tmp = ft_read_mri(fullfile(maskdir,'HAND.nii')); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
 Mask.h = tmp2;
 
-tmp = ft_read_mri('FEET.nii'); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
+tmp = ft_read_mri(fullfile(maskdir,'FEET.nii')); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
 Mask.f = tmp2;
 
-tmp = ft_read_mri('WORD.nii'); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
+tmp = ft_read_mri(fullfile(maskdir,'WORD.nii')); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
 Mask.w = tmp2;
 
-tmp = ft_read_mri('SUB.nii'); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
+tmp = ft_read_mri(fullfile(maskdir,'SUB.nii')); tmp1 = reshape(tmp.anatomy,[1, size(tmp.anatomy,1)*size(tmp.anatomy,2)*size(tmp.anatomy,3)]); idx = tmp1 ==0; tmp2 = tmp1; tmp2(:,idx) = [];
 Mask.s = tmp2;
 
 %% Intra-Class correlation
