@@ -81,7 +81,7 @@ end
 addpath('/data/MEG/Vahab/Github/MCW-MEGlab/Projects/BCI/SR_BCI_matlabscripts')
 
 tag = ['_4';'_5'];
-sFiles_4 = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles_4 = do_find_sfiles(sFiles_name,dd, tag);
 % Process: Average: Everything
 bst_process('CallProcess', 'process_average', sFiles_4, [], ...
     'avgtype',         1, ...  % Everything
@@ -92,7 +92,7 @@ bst_process('CallProcess', 'process_average', sFiles_4, [], ...
 
 %- 
 tag = ['_8';'_9'];
-sFiles_8 = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles_8 = do_find_sfiles(sFiles_name,dd, tag);
 % Process: Average: Everything
 bst_process('CallProcess', 'process_average', sFiles_8, [], ...
     'avgtype',         1, ...  % Everything
@@ -103,7 +103,7 @@ bst_process('CallProcess', 'process_average', sFiles_8, [], ...
 
 %- 
 tag = ['_16';'_17'];
-sFiles_16 = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles_16 = do_find_sfiles(sFiles_name,dd, tag);
 
 % Process: Average: Everything
 bst_process('CallProcess', 'process_average', sFiles_16, [], ...
@@ -115,7 +115,7 @@ bst_process('CallProcess', 'process_average', sFiles_16, [], ...
 
 %- 
 tag = ['_32';'_33'];
-sFiles_32 = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles_32 = do_find_sfiles(sFiles_name,dd, tag);
 
 % Process: Average: Everything
 bst_process('CallProcess', 'process_average', sFiles_32, [], ...
@@ -201,19 +201,19 @@ Run_BSstats_BCI
 %% GII
 cd(bsdir); clear sFiles
 tag = ['_4';'_5'];stag = '4';
-sFiles = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles = do_find_sfiles(sFiles_name,dd, tag);
 
 cd(bsdir); clear sFiles
 tag = ['_8';'_9'];stag = '8';
-sFiles = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles = do_find_sfiles(sFiles_name,dd, tag);
 
 cd(bsdir); clear sFiles
 tag = ['_16';'_17'];stag = '16';
-sFiles = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles = do_find_sfiles(sFiles_name,dd, tag);
 
 cd(bsdir); clear sFiles
 tag = ['_32';'_33'];stag = '32';
-sFiles = vy_find_sfiles2(sFiles_name,dd, tag);
+sFiles = do_find_sfiles(sFiles_name,dd, tag);
 
 %% Process: Export to SPM12 (surface) - for SPM stat analysis
 % Process: Export to SPM12 (surface) - for SPM stat analysis
