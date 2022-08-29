@@ -1,5 +1,5 @@
 # BCI-beta-desynchrony_2021
-This repository contains Matlab scripts to run a non-overlapping temporal window DICS beamformer source analysis on the MEG trial responses of a mental imagery BCI task. Scripts were prepared for a research work titled "Imaging cortical engagement during motor imagery, mental arithmetic, and silent word generation using MEG beta rhythm". Scripts are prepared using Brainstorm and FieldTrip software tools.
+This repository contains Matlab scripts to run a non-overlapping temporal window DICS beamformer source analysis on the MEG trial responses of a mental imagery BCI task. Scripts were prepared for a research work titled "Mapping & decoding cortical engagement during motor imagery, mental arithmetic, and silent word generation using MEG". Scripts are prepared using Brainstorm and FieldTrip software tools.
 
 # Data
  - Raw MEG data ([Link](https://springernature.figshare.com/collections/A_magnetoencephalography_dataset_for_motor_and_cognitive_imagery_BCI/5101544));
