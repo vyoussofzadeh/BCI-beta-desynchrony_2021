@@ -1,6 +1,6 @@
 %% BCI dataset, Ulster University
 
-% preprocessing pipeline
+% Pipeline_correlation analysis
 % Writtern by Vahab Youssof Zadeh
 % Update: 08/10/2022
 
